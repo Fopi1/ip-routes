@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th (click)="sortBy('destination')">
+        Адрес назначения
+        <span *ngIf="currentSortKey === 'destination' "
+          >{{ sortDirection$.getValue() === 'asc' ? '▲' : '▼' }}</span
+        >
+      </th>
+      <th (click)="sortBy('gateway')">
+        Шлюз
+        <span *ngIf="currentSortKey === 'gateway' "
+          >{{ sortDirection$.getValue() === 'asc' ? '▲' : '▼' }}</span
+        >
+      </th>
+      <th (click)="sortBy('interface')">
+        Интерфейс
+        <span *ngIf="currentSortKey === 'interface' "
+          >{{ sortDirection$.getValue() === 'asc' ? '▲' : '▼' }}</span
+        >
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let destination of destinations$ | async;trackBy:trackByUuid">
+      <td>{{destination.destination}}</td>
+      <td>{{destination.gateway}}</td>
+      <td>{{destination.interface}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { IpTable } from './features/ip-table/components/ip-table/ip-table';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [IpTable],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
-export class App {
-  protected title = 'ip-routes';
-}
+export class App {}
